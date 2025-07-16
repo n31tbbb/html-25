@@ -29,264 +29,177 @@ L'obiettivo di questo esercizio è imparare ad utilizzare Bootstrap per creare l
 
 ### 2. Creazione del file CSS personalizzato
 - **Naviga alla cartella:** Vai alla cartella `school/2-bootstrap/`
-- **Crea il file CSS:** Crea un file chiamato `style.css` con le seguenti personalizzazioni:
+- **Crea il file CSS:** Crea un file chiamato `style.css` con le seguenti caratteristiche:
 
-```css
-/* === PERSONALIZZAZIONI BASE === */
+#### **🎯 Requisiti CSS da implementare:**
 
-/* Sfondo generale della pagina */
-body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+**Personalizzazioni globali:**
+- Imposta uno sfondo gradiente per il `body` (colori a tua scelta)
+- Personalizza il font-family di tutta la pagina
+- Imposta un colore uniforme per tutti i titoli (h1-h6)
 
-/* Personalizzazione titoli */
-h1, h2, h3, h4, h5, h6 {
-    color: #2c3e50;
-    font-weight: 700;
-}
+**Crea 2 CLASSI personalizzate:**
+- `.custom-card` - Per le card dei servizi con effetti hover
+- `.custom-button` - Per il bottone principale con gradiente
 
-/* Esempio di utilizzo CLASS */
-.custom-card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+**Crea 2 ID personalizzati:**
+- `#hero-section` - Per la sezione banner principale
+- `#special-footer` - Per il footer con stili speciali
 
-.custom-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
+**Media query responsive:**
+- Adatta gli stili per dispositivi mobili (max-width: 768px)
 
-.custom-button {
-    background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
-    border: none;
-    border-radius: 25px;
-    padding: 12px 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
+> 💡 **Suggerimento:** Usa gradienti CSS, transizioni e effetti hover per rendere il sito più moderno!
 
-.custom-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-}
-
-/* Esempio di utilizzo ID */
-#hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-}
-
-#special-footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    position: relative;
-}
-
-#special-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #e74c3c, #f39c12, #2ecc71, #3498db);
-}
-
-/* Stili responsivi personalizzati */
-@media (max-width: 768px) {
-    .custom-card {
-        margin-bottom: 20px;
-    }
-    
-    #hero-section {
-        min-height: 60vh;
-        text-align: center;
-    }
-}
-```
+#### **📚 Risorse per CSS:**
+- [Guida ai Gradienti CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients) - Come creare sfondi gradient
+- [CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) - Animazioni smooth
+- [CSS Hover Effects](https://www.w3schools.com/css/css_pseudo_classes.asp) - Effetti al passaggio del mouse
+- [Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) - CSS responsive
 
 ### 3. Creazione del file HTML
 - **Crea un nuovo file:** Crea un file chiamato `index.html`
-- **Struttura base:** Inizia con la seguente struttura HTML5:
+- **Struttura base:** Inizia con la struttura HTML5 e collega Bootstrap + il tuo CSS:
 
-```html
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Mio Sito Bootstrap</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS Personalizzato -->
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-    <!-- Il tuo contenuto qui -->
+#### **🎯 Struttura HTML da creare:**
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
-```
+**Head section:**
+- Doctype, html lang="it", meta tags
+- Titolo della pagina
+- Link a Bootstrap CSS (CDN)
+- Link al tuo file `style.css`
+
+**Body section:**
+- Area per navbar
+- Area per hero section (con ID personalizzato)
+- Area per sezione servizi
+- Area per footer (con ID personalizzato)
+- Script Bootstrap JS alla fine
+
+> 💡 **Ricorda:** L'ordine dei CSS è importante! Prima Bootstrap, poi il tuo CSS personalizzato.
+
+#### **📚 Risorse per HTML e Bootstrap:**
+- [Struttura HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML/Element) - Tutti i tag HTML
+- [Bootstrap CDN](https://getbootstrap.com/docs/5.3/getting-started/introduction/#cdn-via-jsdelivr) - Come includere Bootstrap
+- [Meta Viewport](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) - Tag per responsive design
 
 ### 4. Implementazione della Navbar
-Aggiungi una navbar responsiva subito dopo il tag `<body>`:
+Crea una navbar responsiva con le seguenti caratteristiche:
 
-```html
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-        <a class="navbar-brand" href="#">MioSito</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#servizi">Servizi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contatti">Contatti</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-```
+#### **🎯 Requisiti Navbar:**
+- Usa le classi Bootstrap: `navbar`, `navbar-expand-lg`, `navbar-dark`, `bg-primary`
+- Aggiungi un container Bootstrap
+- Crea un brand/logo con il testo "MioSito"
+- Aggiungi un toggler button per mobile
+- Menu con 3 voci: Home, Servizi, Contatti
+- I link devono puntare alle sezioni della pagina (anchor link)
+
+#### **🔗 Classi Bootstrap utili:**
+- `navbar-brand` - Per il logo/nome del sito
+- `navbar-toggler` - Bottone per menu mobile
+- `navbar-nav` - Lista di navigazione
+- `nav-item` e `nav-link` - Elementi del menu
+
+> 💡 **Suggerimento:** Usa l'attributo `data-bs-toggle="collapse"` per il menu mobile!
+
+#### **📚 Risorse per Navbar:**
+- [Bootstrap Navbar](https://getbootstrap.com/docs/5.3/components/navbar/) - Documentazione completa navbar
+- [Responsive Navigation](https://getbootstrap.com/docs/5.3/components/navbar/#responsive-behaviors) - Menu responsive
+- [Anchor Links](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#linking_to_an_element_on_the_same_page) - Link interni alla pagina
 
 ### 5. Creazione del Banner/Hero Section
-Aggiungi un banner accattivante sotto la navbar utilizzando l'**ID personalizzato**:
+Crea una sezione hero accattivante con il tuo **ID personalizzato**:
 
-```html
-<section id="hero-section" class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h1 class="display-4 fw-bold">Benvenuto nel mio sito!</h1>
-                <p class="lead">Questo è il mio primo sito web creato con Bootstrap. Scopri le potenzialità del framework CSS più utilizzato al mondo.</p>
-                <a href="#servizi" class="btn custom-button btn-lg">Scopri di più</a>
-            </div>
-            <div class="col-lg-6">
-                <img src="https://placehold.co/500x300/ffffff/667eea?text=Hero+Image" class="img-fluid rounded" alt="Immagine hero">
-            </div>
-        </div>
-    </div>
-</section>
-```
+#### **🎯 Requisiti Hero Section:**
+- Usa l'ID `hero-section` che hai definito nel CSS
+- Struttura a 2 colonne con sistema griglia Bootstrap
+- **Colonna sinistra:** Titolo principale, paragrafo descrittivo, bottone CTA
+- **Colonna destra:** Immagine placeholder
+- Il bottone deve usare la classe `custom-button` del tuo CSS
 
-### 5. Sezione con 3 Colonne
-Crea una sezione con tre colonne per presentare servizi utilizzando le **classi personalizzate**:
+#### **🔗 Classi Bootstrap utili:**
+- `container`, `row`, `col-lg-6` - Sistema griglia
+- `display-4`, `fw-bold` - Tipografia
+- `lead` - Stile paragrafo
+- `btn`, `btn-lg` - Bottoni
+- `img-fluid`, `rounded` - Immagini responsive
 
-```html
-<section id="servizi" class="py-5">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12 text-center">
-                <h2 class="display-5 fw-bold">I Nostri Servizi</h2>
-                <p class="lead">Scopri cosa possiamo offrire per il tuo progetto</p>
-            </div>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card custom-card h-100">
-                    <div class="card-body text-center">
-                        <div class="mb-3">
-                            <i class="display-4 text-primary">🎨</i>
-                        </div>
-                        <h5 class="card-title">Web Design</h5>
-                        <p class="card-text">Creiamo design moderni e responsivi per il tuo sito web, utilizzando le migliori pratiche di UX/UI.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card custom-card h-100">
-                    <div class="card-body text-center">
-                        <div class="mb-3">
-                            <i class="display-4 text-primary">💻</i>
-                        </div>
-                        <h5 class="card-title">Sviluppo Web</h5>
-                        <p class="card-text">Sviluppiamo siti web performanti e sicuri utilizzando le tecnologie più moderne e affidabili.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card custom-card h-100">
-                    <div class="card-body text-center">
-                        <div class="mb-3">
-                            <i class="display-4 text-primary">📱</i>
-                        </div>
-                        <h5 class="card-title">App Mobile</h5>
-                        <p class="card-text">Realizziamo applicazioni mobile native e cross-platform per iOS e Android.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-```
+#### **🖼️ Immagine placeholder:**
+Usa: `https://placehold.co/500x300/ffffff/667eea?text=Hero+Image`
 
-### 6. Footer con 4 Colonne
+> 💡 **Ricorda:** Applica sia l'ID personalizzato che le classi Bootstrap per combinare i tuoi stili con quelli di Bootstrap!
+
+#### **📚 Risorse per Layout e Griglia:**
+- [Bootstrap Grid System](https://getbootstrap.com/docs/5.3/layout/grid/) - Sistema a griglia responsive
+- [Bootstrap Typography](https://getbootstrap.com/docs/5.3/content/typography/) - Classi per testo
+- [Bootstrap Buttons](https://getbootstrap.com/docs/5.3/components/buttons/) - Stili per bottoni
+- [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox) - Layout flessibile
+
+### 6. Sezione con 3 Colonne (Servizi)
+Crea una sezione con tre colonne utilizzando le **classi personalizzate**:
+
+#### **🎯 Requisiti Sezione Servizi:**
+- ID: `servizi` (per i link della navbar)
+- **Intestazione centrale:** Titolo e sottotitolo
+- **3 card in layout responsive:** Una per ogni servizio
+- Ogni card deve usare la classe `custom-card` del tuo CSS
+- **Contenuto per ogni card:** Icona (emoji), titolo, descrizione
+
+#### **🔗 Classi Bootstrap utili:**
+- `py-5` - Padding verticale
+- `text-center` - Testo centrato
+- `display-5` - Titolo grande
+- `row`, `g-4` - Sistema griglia con gap
+- `col-md-4` - 3 colonne su desktop
+- `card`, `card-body`, `h-100` - Componenti card
+
+#### **📋 Contenuti suggeriti:**
+1. **Web Design** 🎨 - Descrizione del servizio
+2. **Sviluppo Web** 💻 - Descrizione del servizio  
+3. **App Mobile** 📱 - Descrizione del servizio
+
+> 💡 **Importante:** Combina `card` (Bootstrap) + `custom-card` (tuo CSS) per avere sia la struttura che lo stile personalizzato!
+
+#### **📚 Risorse per Cards e Componenti:**
+- [Bootstrap Cards](https://getbootstrap.com/docs/5.3/components/card/) - Componenti card completi
+- [Bootstrap Spacing](https://getbootstrap.com/docs/5.3/utilities/spacing/) - Margin e padding utilities
+- [CSS Box Shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) - Effetti ombra
+- [CSS Transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) - Animazioni e trasformazioni
+
+### 7. Footer con 4 Colonne
 Completa la pagina con un footer strutturato utilizzando l'**ID personalizzato**:
 
-```html
-<footer id="special-footer" class="text-light py-5">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-md-3">
-                <h5 class="fw-bold">MioSito</h5>
-                <p>Il tuo partner ideale per progetti web innovativi e soluzioni digitali moderne.</p>
-            </div>
-            <div class="col-md-3">
-                <h5 class="fw-bold">Servizi</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-light text-decoration-none">Web Design</a></li>
-                    <li><a href="#" class="text-light text-decoration-none">Sviluppo Web</a></li>
-                    <li><a href="#" class="text-light text-decoration-none">App Mobile</a></li>
-                    <li><a href="#" class="text-light text-decoration-none">Consulenza</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h5 class="fw-bold">Link Utili</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-light text-decoration-none">Chi Siamo</a></li>
-                    <li><a href="#" class="text-light text-decoration-none">Portfolio</a></li>
-                    <li><a href="#" class="text-light text-decoration-none">Blog</a></li>
-                    <li><a href="#" class="text-light text-decoration-none">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h5 class="fw-bold">Contatti</h5>
-                <p class="mb-1">📧 info@miosito.com</p>
-                <p class="mb-1">📞 +39 123 456 7890</p>
-                <p class="mb-1">📍 Via Roma, 123 - Milano</p>
-                <div class="mt-3">
-                    <a href="#" class="text-light me-3">Facebook</a>
-                    <a href="#" class="text-light me-3">Twitter</a>
-                    <a href="#" class="text-light">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-        <hr class="my-4">
-        <div class="row">
-            <div class="col-12 text-center">
-                <p class="mb-0">&copy; 2024 MioSito. Tutti i diritti riservati.</p>
-            </div>
-        </div>
-    </div>
-</footer>
-```
+#### **🎯 Requisiti Footer:**
+- Usa l'ID `special-footer` che hai definito nel CSS
+- Layout a 4 colonne responsive
+- **Colonna 1:** Nome azienda + descrizione
+- **Colonna 2:** Lista servizi (4 voci)
+- **Colonna 3:** Link utili (4 voci)
+- **Colonna 4:** Informazioni di contatto + social
 
-### 7. Comprensione di CSS personalizzato con Bootstrap
+#### **🔗 Classi Bootstrap utili:**
+- `text-light` - Testo bianco
+- `py-5` - Padding verticale
+- `col-md-3` - 4 colonne uguali
+- `fw-bold` - Testo grassetto
+- `list-unstyled` - Lista senza punti
+- `text-decoration-none` - Link senza sottolineatura
+
+#### **📋 Contenuti da includere:**
+- **Servizi:** Web Design, Sviluppo Web, App Mobile, Consulenza
+- **Link utili:** Chi Siamo, Portfolio, Blog, Privacy Policy
+- **Contatti:** Email, telefono, indirizzo, social media
+- **Copyright:** Anno e nome azienda
+
+> 💡 **Bonus:** Aggiungi una linea orizzontale (`<hr>`) prima del copyright!
+
+#### **📚 Risorse per Footer e Liste:**
+- [Bootstrap List Groups](https://getbootstrap.com/docs/5.3/components/list-group/) - Liste stilizzate
+- [Bootstrap Utilities](https://getbootstrap.com/docs/5.3/utilities/api/) - Classi utility per colori e testo
+- [CSS Pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/::before) - Elementi decorativi (::before, ::after)
+- [CSS Position](https://developer.mozilla.org/en-US/docs/Web/CSS/position) - Posizionamento elementi
+
+### 8. Comprensione di CSS personalizzato con Bootstrap
 **📚 Importante: Analizza il file CSS che hai creato!**
 
 Nel file `style.css` hai imparato a:
@@ -312,16 +225,28 @@ Nel file `style.css` hai imparato a:
 - Stili responsivi per dispositivi mobili
 - Adattamento automatico su schermi piccoli
 
-### 8. Personalizzazione e Test
+#### **📚 Link di Approfondimento:**
+- [Differenza tra Classi e ID](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) - Selettori CSS
+- [CSS Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) - Priorità degli stili
+- [Bootstrap Customization](https://getbootstrap.com/docs/5.3/customize/overview/) - Come personalizzare Bootstrap
+- [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) - Variabili CSS
+
+### 9. Personalizzazione e Test
 - **Personalizza i contenuti:** Modifica testi, colori e immagini secondo i tuoi gusti
 - **Testa la responsività:** Ridimensiona la finestra del browser per vedere come si adatta il layout
 - **Prova la navbar:** Testa il menu su dispositivi mobili (usa gli strumenti di sviluppo del browser)
 
-### 9. Visualizzazione del risultato
+#### **📚 Risorse per Testing e Debug:**
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/device-mode/) - Strumenti sviluppatore per test responsive
+- [Responsive Design Mode](https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/) - Firefox responsive design
+- [CSS Validator](https://jigsaw.w3.org/css-validator/) - Validatore CSS online
+- [HTML Validator](https://validator.w3.org/) - Validatore HTML online
+
+### 10. Visualizzazione del risultato
 - **Live Server:** Clicca con il tasto destro su `index.html` e seleziona "Open with Live Server"
 - **Verifica responsive:** Usa gli strumenti di sviluppo del browser (F12) per testare su diverse dimensioni di schermo
 
-### 10. Commit e Push
+### 11. Commit e Push
 ```bash
 # Aggiungi i file
 git add .
@@ -333,7 +258,7 @@ git commit -m "Completato Esercizio 2: Implementazione Bootstrap base"
 git push origin feature/esercizio-2-bootstrap
 ```
 
-### 11. Pull Request
+### 12. Pull Request
 - Vai su GitHub e crea una Pull Request dalla tua branch
 - Titolo: "Esercizio 2: Implementazione Bootstrap - Layout responsivo completo"
 - Descrizione: "Implementazione di una pagina web completa con Bootstrap includendo navbar, hero section, sezione a tre colonne e footer a quattro colonne"
@@ -370,8 +295,36 @@ git push origin feature/esercizio-2-bootstrap
 4. **Aggiungi animazioni** con le classi utility di Bootstrap
 
 ## Risorse Utili
-- [Documentazione ufficiale Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-- [Bootstrap Examples](https://getbootstrap.com/docs/5.3/examples/)
-- [Bootstrap Icons](https://icons.getbootstrap.com/)
+
+### **📖 Documentazione Ufficiale:**
+- [Documentazione ufficiale Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) - Guida completa
+- [Bootstrap Examples](https://getbootstrap.com/docs/5.3/examples/) - Esempi pratici
+- [Bootstrap Icons](https://icons.getbootstrap.com/) - Libreria icone
+
+### **🎨 CSS e Design:**
+- [MDN CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) - Riferimento completo CSS
+- [CSS-Tricks](https://css-tricks.com/) - Guide e tutorial CSS
+- [Can I Use](https://caniuse.com/) - Compatibilità browser per CSS
+- [Coolors](https://coolors.co/) - Generatore palette colori
+
+### **📱 Responsive Design:**
+- [Responsive Web Design Basics](https://web.dev/responsive-web-design-basics/) - Principi base
+- [Bootstrap Breakpoints](https://getbootstrap.com/docs/5.3/layout/breakpoints/) - Punti di rottura responsive
+- [Viewport Meta Tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag) - Tag viewport
+
+### **🛠️ Strumenti di Sviluppo:**
+- [VS Code Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - Server locale
+- [Browser DevTools Guide](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools) - Strumenti sviluppatore
+
+## 🆘 Hai Bisogno di Aiuto?
+
+Se ti trovi in difficoltà durante l'esercizio:
+
+1. **Rileggi attentamente** le istruzioni di ogni sezione
+2. **Consulta la documentazione** Bootstrap ufficiale
+3. **Controlla la console** del browser per eventuali errori
+4. **Solo se necessario:** consulta il file `solution-bootstrap.md` per vedere la soluzione completa
+
+> ⚠️ **Importante:** Prova sempre a risolvere l'esercizio da solo prima di guardare la soluzione!
 
 Buon lavoro! 🚀
