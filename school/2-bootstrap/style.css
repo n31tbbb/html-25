@@ -1,0 +1,214 @@
+body { background-image:linear-gradient(to right, 	#000080, #008080);
+min-height: 100vh; 
+ margin: 0; 
+font-family: "Arial", sans-serif;
+color: #333;
+line-height: 1.6;}
+h1,h2,h5,h6 {color: #4CAF50;}
+h3 {color:aliceblue;position: relative;
+              top: 20px;   
+              left: 50px }
+              p {color:antiquewhite;position: relative;
+              top: 20px;   
+              left: 50px}
+h4 { text-align: center; color:aliceblue}
+
+ul {color:#f0f0f7;}
+.custom-card { background-color: 	#000080; 
+    padding: 100px 200px;
+    border: none;
+    border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+}
+.custom-card:hover { background-color: #0056b3; 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+}
+
+.custom-card1 { background-color: 	#9696cf; 
+    padding: 100px 200px;
+    border: none;
+    border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+}
+.custom-card1:hover { background-color: #6babf0; 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            
+            
+
+}
+.custom-card2 { background-color: 	#03034e; 
+    padding: 100px 200px;
+    border: none;
+    border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;}
+
+.custom-card2:hover { background-color: #5b9ee6; 
+            transform: translateY(-2px);  
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+}
+.customfooter{ background-color: 	#f0f0f7; 
+    padding: 100px 200px;
+    border: none;
+    border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;}
+
+.customfooter:hover { background-color: #1ad367; 
+            transform: translateY(-2px);  
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+
+}
+
+
+.custom-button { background-image:linear-gradient(to right, rgb(61, 77, 165), rgb(5, 242, 250));
+transition: transform 0.3s ease;
+position: relative;
+              top: 20px;   
+              left: 50px; }
+.custom-button:hover {transform: scale(1.05);}
+
+#hero-section {color: rgb(190, 16, 16);
+    font-size: 2em;
+    background-color: lightgray;
+    padding: 20px;
+
+position: relative;
+              top: 20px;   
+              left: 50px}
+
+    #special-footer {color: rgb(211, 211, 211);
+    font-size: 2em;
+    background-color: rgb(123, 125, 230);
+    padding: 20px;}
+    
+
+    /* Stili Generali */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+}
+
+
+
+/* Stili Generali della Navbar */
+.navbar {
+  background-color:linear-gradient(to right, 	#000080, #008080);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Stili del Menu (inizialmente nascosto su mobile) */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Mostra i link in linea su desktop */
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ddd;
+}
+
+/* Stili del Pulsante Hamburger (inizialmente nascosto su desktop) */
+.hamburger-menu {
+  display: none; /* Nascondi l'hamburger di default (per desktop) */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  z-index: 1001; /* Assicura che sia sopra il menu quando aperto */
+}
+
+.hamburger-menu .icon-bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🍔 MEDIA QUERY per Mobile (lo stato "Hamburger") 🍔 */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap; /* Permetti agli elementi di andare a capo */
+  }
+
+  .navbar-header {
+    width: 100%; /* L'header occupa tutta la larghezza */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hamburger-menu {
+    display: block; /* Mostra l'hamburger su schermi piccoli */
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: column; /* I link del menu vanno in colonna */
+    background-color:linear-gradient(to right, 	#000080, #008080); /* Sfondo per il menu aperto */
+    position: absolute; /* Posiziona il menu sopra il contenuto */
+    top: 60px; /* Sotto la navbar */
+    left: 0;
+    transform: translateX(-100%); /* Nascosto fuori dallo schermo */
+    transition: transform 0.3s ease-in-out;
+    padding: 15px 0;
+    z-index: 1000;
+  }
+
+  .nav-links li {
+    margin: 10px 20px; /* Margini per i link del menu mobile */
+  }
+
+  /* Stato "aperto" del menu (gestito da JS) */
+  .nav-links.open {
+    transform: translateX(0); /* Mostra il menu */
+  }
+
+  /* Animazione dell'icona hamburger quando il menu è aperto (opzionale) */
+  .hamburger-menu.open .icon-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-menu.open .icon-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.open .icon-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+}
