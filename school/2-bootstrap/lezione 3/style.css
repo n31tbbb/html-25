@@ -1,0 +1,62 @@
+body { background-image:linear-gradient(to right, 	#000080, #008080);
+min-height: 100vh; 
+ margin: 0; 
+font-family: "Arial", sans-serif;
+color: #333;
+line-height: 1.6;}
+h1,h2,h5,h6 {color: #4CAF50;}
+.navbar-gradient {
+  background: linear-gradient(to right, #000080, #008080);
+  border-color: azure;
+}
+#carouselExampleControls
+{ width: 600px;
+  height: 400px;
+  position: absolute
+  bottom : -35px;
+  left : 375px;
+  margin-top: 50px;
+  
+
+}
+#buttonBlack{
+  background-color: black;
+  border-color: aliceblue;
+}
+
+
+#footer{ background-image:linear-gradient(to right, 	#000080, #008080);
+  border: 2px solid aliceblue;  }
+
+
+  a:link {
+  color: beige;      /* Blu */
+}
+
+a:visited {
+  color: aliceblue;   /* Grigio */
+}
+
+a:hover {
+  color: blanchedalmond;      /* Verde */
+  text-decoration: underline; /* Aggiunge la sottolineatura al passaggio del mouse */
+}
+
+a:active {
+  color: #7bf76bcb;      /* Rosso */
+}
+
+
+#navbar123{  background: linear-gradient(to right, #000080, #008080);
+
+  
+}
+#dimensioniFoto {    width: 100%;       /* L'elemento occuperà il 100% dello spazio disponibile */
+  max-width: 700px;
+
+
+}
+
+
+#dimensioniTesto{  width: 100%;       /* L'elemento occuperà il 100% dello spazio disponibile */
+  max-width: 700px;}
