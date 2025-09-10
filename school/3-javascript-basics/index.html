@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 3: JavaScript Basics</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS Personalizzato -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">JS Learning</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#interactive">Interattivo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contatti</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4">Impara JavaScript!</h1>
+                    <p class="lead">Aggiungi interattività al tuo sito web con JavaScript.</p>
+                    <button id="welcomeBtn" class="btn btn-primary btn-lg">Inizia l'avventura</button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://placehold.co/500x300/007bff/ffffff?text=JavaScript" class="img-fluid rounded" alt="JavaScript">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Section -->
+    <section id="interactive" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Sezione Interattiva</h2>
+            <div class="row g-4">
+                <!-- Counter Card -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Contatore</h5>
+                            <p class="card-text">Clicca per aumentare il contatore</p>
+                            <h3 id="counter" class="text-primary">0</h3>
+                            <button id="incrementBtn" class="btn btn-success">+1</button>
+                            <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Changer Card -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Cambia Colore</h5>
+                            <p class="card-text">Cambia il colore di sfondo</p>
+                            <div id="colorBox" class="mx-auto mb-3" style="width: 100px; height: 100px; background-color: #007bff; border-radius: 10px;"></div>
+                            <button id="colorBtn" class="btn btn-warning">Colore Casuale</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Input Card -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Saluto Personalizzato</h5>
+                            <p class="card-text">Inserisci il tuo nome</p>
+                            <input type="text" id="nameInput" class="form-control mb-3" placeholder="Il tuo nome">
+                            <button id="greetBtn" class="btn btn-info">Saluta</button>
+                            <p id="greeting" class="mt-3 text-success"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <h2 class="text-center mb-4">Modulo di Contatto</h2>
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Messaggio</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Invia Messaggio</button>
+                    </form>
+                    <div id="formMessage" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Esercizio JavaScript. Tutti i diritti riservati.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Personalizzato -->
+    <script src="script.js"></script>
+</body>
+</html>
